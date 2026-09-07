@@ -3,7 +3,6 @@ import { Menu, X, RefreshCw } from 'lucide-react';
 import Sidebar, { type Page } from './components/Sidebar';
 import Dashboard from './components/Dashboard';
 import LandingPage from './components/LandingPage';
-import LogoGuide from './components/LogoGuide';
 import PanelVisualization from './components/PanelVisualization';
 import ThermalAnalysis from './components/ThermalAnalysis';
 import PowerAnalytics from './components/PowerAnalytics';
@@ -28,23 +27,15 @@ const pageTitles: Record<Page, { title: string; sub: string }> = {
   settings: { title: 'Settings', sub: 'Configuration & thresholds' },
 };
 
-type AppView = 'logo' | 'landing' | 'dashboard';
+type AppView = 'landing' | 'dashboard';
 
 export default function App() {
-  const [view, setView] = useState<AppView>('logo');
+  const [view, setView] = useState<AppView>('landing');
   const [page, setPage] = useState<Page>('dashboard');
   const [scenario, setScenario] = useState<ScenarioKey>(defaultScenario);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
   const s = scenarios[scenario];
-
-  if (view === 'logo') {
-    return (
-      <div style={{ height: '100%' }}>
-        <LogoGuide onContinue={() => setView('landing')} />
-      </div>
-    );
-  }
 
   if (view === 'landing') {
     return (
@@ -137,7 +128,7 @@ export default function App() {
               <span style={{ fontSize: 12, color: '#005a99', fontWeight: 500 }}>System Online</span>
             </div>
             <button
-              onClick={() => setView('logo')}
+              onClick={() => setView('landing')}
               style={{
                 padding: '5px 12px',
                 borderRadius: 6,
