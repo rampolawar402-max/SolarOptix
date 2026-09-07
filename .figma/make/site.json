@@ -1,0 +1,10 @@
+{
+  "description": "SolarOptix helps users optimize solar energy usage by providing real-time data analysis and insights, making renewable energy accessible and efficient.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

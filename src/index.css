@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import 'tailwindcss';
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f4f5f7;
+  color: #111827;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', sans-serif;
+}
+
+.mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Card */
+.card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+}
+
+.card-hover {
+  transition: box-shadow 0.15s, border-color 0.15s;
+}
+.card-hover:hover {
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  border-color: #d1d5db;
+}
+
+/* Nav item */
+.nav-item {
+  transition: background 0.12s, color 0.12s;
+  border-radius: 7px;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+.nav-item:hover {
+  background: #f3f4f6;
+}
+.nav-item.active {
+  background: #e6f3fc;
+  border-color: #b3d4f0;
+  color: #005a99;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #9ca3af; }
+
+/* Fade in */
+.fade-in {
+  animation: fadeIn 0.2s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Spin animation (used by RefreshCw in QuickAnalysis) */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Progress bar */
+.progress-fill {
+  transition: width 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Pulse dot */
+.pulse-dot {
+  animation: pulse-anim 2.5s ease-in-out infinite;
+}
+@keyframes pulse-anim {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* Panel cell */
+.panel-cell {
+  transition: box-shadow 0.15s, transform 0.15s;
+  cursor: pointer;
+}
+.panel-cell:hover {
+  transform: scale(1.04);
+  z-index: 5;
+}
+
+/* Thermal cell */
+.thermal-cell {
+  transition: all 0.45s ease;
+}
+
+/* Table row hover */
+tr.row-hover:hover {
+  background: #f9fafb;
+}
+
+/* Input focus */
+input:focus {
+  outline: none;
+  border-color: #0070C0 !important;
+  box-shadow: 0 0 0 3px rgba(22,163,74,0.08);
+}
+
+/* Segment button */
+.seg-btn {
+  transition: all 0.12s;
+}
+.seg-btn:hover {
+  background: #f3f4f6;
+}
+.seg-btn.active {
+  background: #0070C0;
+  color: #ffffff;
+  border-color: #0070C0;
+}
